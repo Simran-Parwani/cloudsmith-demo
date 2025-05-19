@@ -1,0 +1,39 @@
+name: Publish Source Package Only
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install setuptools
+        run: pip install --upgrade setuptools
+
+      - name: Build source dist only (.tar.gz)
+        run: python setup.py sdist
+
+      - name: Authenticate with Cloudsmith via OIDC
+        uses: cloudsmith-io/cloudsmith-cli-action@v1.0.3
+        with:
+          oidc-namespace: 'simran-parwani-testorg'
+          oidc-service-slug: 'terraformbot-idAf'
+          oidc-auth-only: 'true'
+
+      - name: Push to Cloudsmith
+        run: |
+          cloudsmith push python simran-parwani-testorg/python dist/*.tar.gz
