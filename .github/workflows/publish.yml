@@ -35,6 +35,12 @@ jobs:
           oidc-service-slug: 'access'
           oidc-auth-only: 'true'
 
-      - name: Push to Cloudsmith
-        run: |
-          cloudsmith push python simran-parwani-testorg/python dist/*.tar.gz
+      - name: Cloudsmith Push Python Package
+        uses: cloudsmith-io/action@v1.0.3
+        with:
+          command: 'push'
+          format: 'python'
+          owner: 'simran-parwani-testorg'
+          repo: 'python'
+          republish: 'true'
+          file: 'dist/*.tar.gz'
