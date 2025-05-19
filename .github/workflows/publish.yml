@@ -7,6 +7,7 @@ on:
 
 permissions:
   id-token: write
+  contents: read
 
 jobs:
   publish:
@@ -31,7 +32,7 @@ jobs:
         uses: cloudsmith-io/cloudsmith-cli-action@v1.0.3
         with:
           oidc-namespace: 'simran-parwani-testorg'
-          oidc-service-slug: 'terraformbot-idAf'
+          oidc-service-slug: 'access'
           oidc-auth-only: 'true'
 
       - name: Push to Cloudsmith
