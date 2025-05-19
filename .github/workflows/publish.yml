@@ -36,7 +36,7 @@ jobs:
           oidc-auth-only: 'true'
 
       - name: Cloudsmith Push Python Package
-        uses: cloudsmith-io/action@v1.0.3
+        uses: cloudsmith-io/action@v0.5.3
         with:
           command: 'push'
           format: 'python'
