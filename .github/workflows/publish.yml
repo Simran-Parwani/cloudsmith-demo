@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install setuptools1
+      - name: Install setuptools2
         run: pip install --upgrade setuptools
 
       - name: Build source dist only (.tar.gz)
