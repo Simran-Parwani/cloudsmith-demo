@@ -31,13 +31,11 @@ jobs:
       - name: Authenticate with Cloudsmith via OIDC
         uses: cloudsmith-io/cloudsmith-cli-action@v1.0.3
         with:
-          oidc-namespace: 'simran-parwani-testorg'
-          oidc-service-slug: 'access'
+          oidc-namespace: 'orgcs'
+          oidc-service-slug: 'powerfulservice'
           # oidc-auth-only: 'true' 
 
       - name: Name
         run: cloudsmith whoami
 
-      - name: Cloudsmith Push Python Package
-        run: |
-          cloudsmith push python simran-parwani-testorg/python dist/*.tar.gz
+     
