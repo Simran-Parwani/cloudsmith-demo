@@ -33,7 +33,7 @@ jobs:
         with:
           oidc-namespace: 'orgcs'
           oidc-service-slug: 'powerfulservice'
-          # oidc-auth-only: 'true' 
+          oidc-auth-only: 'true' 
 
       - name: Name
         run: cloudsmith whoami
