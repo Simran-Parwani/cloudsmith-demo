@@ -34,7 +34,7 @@ jobs:
           oidc-namespace: 'orgcs'
           oidc-service-slug: 'powerfulservice' 
 
-      - name: Name
-        run: cloudsmith
+      - name: Pull
+        run: curl -u powerfulservice:${{ env.CLOUDSMITH_API_KEY }} "https://dl.cloudsmith.io/basic/orgcs/cstocsrepo/maven/eclipse/jdtcore/3.0.1/jdtcore-3.0.1.jar" -v
 
      
