@@ -32,7 +32,7 @@ jobs:
         uses: cloudsmith-io/cloudsmith-cli-action@v1.0.3
         with:
           oidc-namespace: 'orgcs'
-          oidc-service-slug: 'powerfulservice'
+          oidc-service-slug: 'pushnpullservice'
           oidc-auth-only: 'true' 
 
       - name: Name
