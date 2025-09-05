@@ -31,10 +31,10 @@ jobs:
       - name: Authenticate with Cloudsmith via OIDC
         uses: cloudsmith-io/cloudsmith-cli-action@v1.0.3
         with:
-          oidc-namespace: 'orgcs'
-          oidc-service-slug: 'powerfulservice' 
+          oidc-namespace: 'simran-parwani-testorg'
+          oidc-service-slug: 'access' 
 
       - name: Pull
-        run: curl -u powerfulservice:${{ env.CLOUDSMITH_API_KEY }} "https://dl.cloudsmith.io/basic/orgcs/cstocsrepo/maven/eclipse/jdtcore/3.0.1/jdtcore-3.0.1.jar" -v
+        run: curl -u access:${{ env.CLOUDSMITH_API_KEY }} "https://dl.cloudsmith.io/simran-parwani-testorg/python/python/simple/mkdocs==1.6.1" -v
 
      
